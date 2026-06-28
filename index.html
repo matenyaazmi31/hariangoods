@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HarianGoods — Kisah yang Terbawa, Harapan yang Terjaga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">HarianGoods</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Beranda</a></li>
+    <li><a href="#" onclick="showPage('catalog')">Katalog</a></li>
+    <li><a href="#brand">Tentang</a></li>
+  </ul>
+  <a href="#" class="nav-cart" onclick="showPage('cart')">
+    <span>Keranjang</span>
+    <span class="cart-count" id="cart-count">0</span>
+  </a>
+</nav>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-image-area">
+      <div class="hero-img-placeholder" style="background: url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;">
+      <!-- Catatan: Jika nanti video/brand.mp4 sudah siap, tag video bisa dipakai kembali -->
+    </div>
+      <div class="hero-img-overlay">
+      </div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Seri Arunika 2026</div>
+      <h1 class="hero-title">Kisah yang Terbawa,<br><em>Harapan yang Terjaga.</em></h1>
+      <p class="hero-subtitle">Setiap jahitan adalah doa. Setiap tas adalah saksi bisu dari perjalanan yang layak untuk dikenang.</p>
+      <button class="btn-primary" onclick="showPage('catalog')">Jelajahi Seri Arunika</button>
+    </div>
+    <div class="hero-scroll">
+      <span>Gulir</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <section class="brand-story" id="brand">
+    <div class="brand-story-text">
+      <div class="section-label">Kisah Kami</div>
+      <h2>Makna di Balik Nama <em>Arunika</em></h2>
+      <p>Dalam bahasa Sansekerta, <strong>Arunika</strong> berarti cahaya pertama matahari pagi—momen singkat antara kegelapan dan terang yang menjanjikan segala kemungkinan baru. Itulah jiwa dari setiap tas yang kami buat.</p>
+      <p>HarianGoods lahir dari keyakinan sederhana: barang yang dibawa sehari-hari bukan sekadar alat, melainkan perpanjangan dari nilai dan mimpi pemakainya. Setiap detail dijahit dengan tangan oleh pengrajin lokal yang mewarisi tradisi tekstil Kadungora.</p>
+      <blockquote class="brand-quote">
+        "Bukan tentang ke mana kamu pergi, tapi apa yang kamu bawa dalam perjalananmu."
+      </blockquote>
+    </div>
+    <div class="brand-story-img">
+      <div class="brand-img-deco"></div>
+      <div class="brand-img-frame" style="background: url('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;">
+      <!-- Menggunakan link eksternal agar gambar langsung muncul di GitHub Pages -->
+    </div>
+      <div class="brand-img-label">
+        Arunika Series<br><span style="font-size:0.75rem;font-style:normal;letter-spacing:0.08em;opacity:0.6">Handcrafted since 2022</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured">
+    <div class="section-header">
+      <div class="section-label" style="justify-content:center">Pilihan Utama</div>
+      <h2>Koleksi Terbaik Kami</h2>
+      <p>Tiga ekspresi keindahan dalam satu seri</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="openDetail(0)">
+        <div class="product-card-img">
+          <div class="product-img-main"><span class="product-img-icon">Arunika I</span></div>
+          <div class="product-img-hover"><span class="product-img-icon" style="font-size:0.9rem;color:rgba(253,251,247,0.8)">Detail Tampak</span></div>
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Tote Bag Arunika Kencana</div>
+          <div class="product-variant">Kanvas Primium · Krem Gading</div>
+          <div class="product-footer">
+            <span class="product-price">Rp 125.000</span>
+            <span class="product-stock in-stock">In Stock</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" onclick="openDetail(1)">
+        <div class="product-card-img">
+          <div class="product-img-main" style="background:linear-gradient(160deg,#D4C5B0,#A8957E)"><span class="product-img-icon">Arunika II</span></div>
+          <div class="product-img-hover" style="background:linear-gradient(160deg,#9E8070,#7A6B5C)"><span class="product-img-icon" style="font-size:0.9rem;color:rgba(253,251,247,0.8)">Lifestyle Shot</span></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Tote Bag Arunika Saga</div>
+          <div class="product-variant">Linen Organik · Cokelat Bumi</div>
+          <div class="product-footer">
+            <span class="product-price">Rp 85.000</span>
+            <span class="product-stock in-stock">In Stock</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" onclick="openDetail(2)">
+        <div class="product-card-img">
+          <div class="product-img-main" style="background:linear-gradient(160deg,#B8C5B0,#8CA07E)"><span class="product-img-icon">Arunika III</span></div>
+          <div class="product-img-hover" style="background:linear-gradient(160deg,#6B8070,#4A5C4A)"><span class="product-img-icon" style="font-size:0.9rem;color:rgba(253,251,247,0.8)">Detail Kain</span></div>
+          <div class="product-badge" style="background:#8C7E6B">Limited</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Tote Bag Arunika Rimba</div>
+          <div class="product-variant">Kanvas Batik · Hijau Alam</div>
+          <div class="product-footer">
+            <span class="product-price">Rp 565.000</span>
+            <span class="product-stock out-stock">Hampir Habis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem">
+      <button class="btn-outline" onclick="showPage('catalog')">Lihat Semua Produk</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">HarianGoods</div>
+        <p class="footer-tagline">"Kisah yang Terbawa,<br>Harapan yang Terjaga."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="#" onclick="showPage('home')">Beranda</a>
+        <a href="#" onclick="showPage('catalog')">Katalog</a>
+        <a href="#brand">Tentang Kami</a>
+      </div>
+      <div class="footer-col">
+        <h4>Bantuan</h4>
+        <a href="#">Cara Pemesanan</a>
+        <a href="#">Pengiriman</a>
+        <a href="#">Pengembalian</a>
+      </div>
+      <div class="footer-col">
+        <h4>Sosial</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 HarianGoods. Dibuat dengan niat baik di Indonesia.</span>
+      <span>Kebijakan Privasi · Syarat & Ketentuan</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ CATALOG PAGE ═══ -->
+<div class="page" id="page-catalog">
+  <div class="catalog-header">
+    <div class="section-label">Koleksi Lengkap</div>
+    <h1>Katalog Produk</h1>
+    <p>Setiap tas, sebuah janji yang ditepati</p>
+  </div>
+  <div class="catalog-toolbar">
+    <div class="search-bar">
+      <span class="search-icon">⌕</span>
+      <input type="text" placeholder="Cari produk..." id="search-input" oninput="filterProducts()">
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="setFilter('semua', this)">Semua</button>
+      <button class="filter-tab" onclick="setFilter('arunika', this)">Seri Arunika</button>
+      <button class="filter-tab" onclick="setFilter('aksesoris', this)">Aksesoris</button>
+    </div>
+  </div>
+  <div class="catalog-grid-wrap">
+    <div class="catalog-count" id="catalog-count">Menampilkan 6 produk</div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </div>
+  <footer>
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2025 HarianGoods</span>
+      <span>Dibuat dengan niat baik di Indonesia</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ DETAIL PAGE ═══ -->
+<div class="page" id="page-detail">
+  <div class="detail-wrap">
+    <!-- Gallery -->
+    <div>
+      <div class="gallery-main" id="gallery-main">
+        <span class="gallery-main-label" id="gallery-label">Arunika Kencana</span>
+      </div>
+      <div class="gallery-thumbs">
+        <div class="thumb active" onclick="selectThumb(0, this)"><div class="thumb-inner">Tampak Depan</div></div>
+        <div class="thumb" onclick="selectThumb(1, this)"><div class="thumb-inner">Sisi Detail</div></div>
+        <div class="thumb" onclick="selectThumb(2, this)"><div class="thumb-inner">Kantong Dalam</div></div>
+        <div class="thumb" onclick="selectThumb(3, this)"><div class="thumb-inner">Tampak Belakang</div></div>
+      </div>
+    </div>
+    <!-- Info -->
+    <div>
+      <div class="detail-breadcrumb">
+        <span onclick="showPage('home')">Beranda</span> /
+        <span onclick="showPage('catalog')">Katalog</span> /
+        <span id="detail-breadcrumb-name">Arunika Kencana</span>
+      </div>
+      <h1 class="detail-name" id="detail-name">Tote Bag Arunika Kencana</h1>
+      <div class="detail-subtitle" id="detail-subtitle">Kanvas Premium · Krem Gading</div>
+      <div class="detail-price" id="detail-price">Rp 485.000</div>
+      <div class="detail-stock-info">
+        <span class="product-stock in-stock" id="detail-stock">In Stock</span>
+      </div>
+      <div class="divider"></div>
+      <p class="detail-philosophy" id="detail-philosophy">
+        "Seperti cahaya Arunika yang menembus kabut pagi, tas ini hadir untuk menemani setiap langkah pertamamu—membawa harapan yang selalu layak untuk dibawa pergi."
+      </p>
+      <div class="qty-selector" style="margin-bottom:2rem">
+        <span class="qty-label">Jumlah</span>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input type="number" class="qty-num" id="qty-input" value="1" min="1" max="10">
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <!-- Accordion -->
+      <div class="accordion">
+        <div class="accordion-item" onclick="toggleAccordion(this)">
+          <div class="accordion-header">
+            Bahan Kain
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-content" id="acc-material">
+              <div class="spec-row"><span class="spec-label">Bahan Utama</span><span>Kanvas 100% Cotton, 12 oz</span></div>
+              <div class="spec-row"><span class="spec-label">Lapisan Dalam</span><span>Polyester halus anti-debu</span></div>
+              <div class="spec-row"><span class="spec-label">Pegangan</span><span>Webbing cotton, dijahit ganda</span></div>
+              <div class="spec-row"><span class="spec-label">Aksesoris</span><span>Ritsleting YKK kuningan antik</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="toggleAccordion(this)">
+          <div class="accordion-header">
+            Dimensi & Ukuran
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <div class="spec-row"><span class="spec-label">Tinggi</span><span>38 cm</span></div>
+              <div class="spec-row"><span class="spec-label">Lebar</span><span>32 cm</span></div>
+              <div class="spec-row"><span class="spec-label">Tebal</span><span>12 cm</span></div>
+              <div class="spec-row"><span class="spec-label">Panjang Tali</span><span>60 cm (dapat disesuaikan)</span></div>
+              <div class="spec-row"><span class="spec-label">Kapasitas</span><span>±14 Liter</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="toggleAccordion(this)">
+          <div class="accordion-header">
+            Instruksi Perawatan
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <div class="spec-row"><span class="spec-label">Cuci</span><span>Tangan, air dingin, sabun lembut</span></div>
+              <div class="spec-row"><span class="spec-label">Jangan</span><span>Dicuci mesin, diperas keras</span></div>
+              <div class="spec-row"><span class="spec-label">Pengeringan</span><span>Angin-anginkan, jangan terkena sinar matahari langsung</span></div>
+              <div class="spec-row"><span class="spec-label">Penyimpanan</span><span>Tempat kering, terhindar dari lembap</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-add-cart" onclick="addToCart()">+ Masukkan Keranjang</button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-cart">
+  <div class="catalog-header">
+    <div class="section-label">Keranjang Belanja</div>
+    <h1>Daftar Belanja Anda</h1>
+    <p>Simulasi produk yang siap dibawa pulang</p>
+  </div>
+  
+  <div class="container my-5" style="max-width: 800px;">
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3" style="background: #ffffff; border: 1px solid rgba(140,126,107,0.15);">
+      <div class="d-flex align-items-center gap-3">
+        <div style="width: 60px; height: 80px; background: linear-gradient(135deg, #E8DDD0, #C8BAA8);"></div>
+        <div>
+          <h5 class="mb-1" style="font-family: 'Playfair Display', serif;">Tote Bag Arunika Kencana</h5>
+          <small class="text-muted">Jumlah: 1</small>
+        </div>
+      </div>
+      <div>
+        <span class="fw-bold">Rp 485.000</span>
+      </div>
+    </div>
+
+    <div class="text-end mt-4">
+      <h4 class="mb-4" style="font-family: 'Playfair Display', serif;">Total: <span class="fw-bold">Rp 485.000</span></h4>
+      <button class="btn-outline me-2" onclick="showPage('catalog')">Kembali Belanja</button>
+      <button class="btn-primary" onclick="showPage('checkout')">Lanjut ke Checkout</button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-checkout">
+  <div class="catalog-header">
+    <div class="section-label">Proses Pemesanan</div>
+    <h1>Formulir Checkout</h1>
+    <p>Selesaikan cerita perjalanan Anda bersama HarianGoods</p>
+  </div>
+
+  <div class="container my-5" style="max-width: 600px; background: #ffffff; padding: 2.5rem; border: 1px solid rgba(140,126,107,0.15);">
+    <form onsubmit="event.preventDefault(); alert('Simulasi Pemesanan Berhasil! Data disimpan di sistem Front-End.'); showPage('home');">
+      <div class="mb-3">
+        <label class="form-label small text-uppercase tracking-wider text-muted">Nama Lengkap</label>
+        <input type="text" class="form-control rounded-0" style="border-color: rgba(140,126,107,0.4);" required placeholder="Masukkan nama Anda">
+      </div>
+      <div class="mb-3">
+        <label class="form-label small text-uppercase tracking-wider text-muted">Nomor WhatsApp</label>
+        <input type="tel" class="form-control rounded-0" style="border-color: rgba(140,126,107,0.4);" required placeholder="08xxxxx">
+      </div>
+      <div class="mb-4">
+        <label class="form-label small text-uppercase tracking-wider text-muted">Alamat Pengiriman Lengkap</label>
+        <textarea class="form-control rounded-0" style="border-color: rgba(140,126,107,0.4);" rows="3" required placeholder="Nama jalan, nomor rumah, kecamatan, kabupaten"></textarea>
+      </div>
+      
+      <div class="divider"></div>
+      <div class="d-flex justify-content-between my-3 font-monospace small">
+        <span>Subtotal Produk</span>
+        <span>Rp 485.000</span>
+      </div>
+      <div class="d-flex justify-content-between mb-4 font-monospace small">
+        <span>Ongkos Kirim (Simulasi)</span>
+        <span class="text-success">Rp 0 (Gratis)</span>
+      </div>
+      
+      <button type="submit" class="btn-primary w-100 py-3">Selesaikan Pesanan via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Produk ditambahkan ke keranjang ✓</div>
+
+
+</body>
+</html>
